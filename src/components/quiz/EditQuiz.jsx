@@ -8,7 +8,7 @@ export default function EditQuiz() {
   useEffect(() => {
     async function handleGetData() {
       const response = await fetch(
-        `http://localhost:3000/api/quiz/${params.id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/quiz/${params.id}`,
         {}
       );
       const resData = await response.json();
@@ -18,10 +18,9 @@ export default function EditQuiz() {
     handleGetData();
   }, []);
 
-  
-
-  return <>
-
-  <h1>Edit quiz app</h1>
-  </>;
+  return (
+    <>
+      <h1>Edit quiz app</h1>
+    </>
+  );
 }

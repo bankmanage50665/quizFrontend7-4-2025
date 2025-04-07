@@ -62,7 +62,7 @@ const EditQuizForm = () => {
 
     setQuizData([...quizData, newQuizItem]);
 
-    const response = await fetch(`http://localhost:3000/api/quiz/createQuiz`, {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/quiz/createQuiz`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -24,7 +24,7 @@ const LoginWithOtp = () => {
 
       // API call to send OTP
       const response = await axios.post(
-        "http://localhost:3000/api/user/request-otp",
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/request-otp`,
         { phoneNumber }
       );
 
@@ -53,7 +53,7 @@ const LoginWithOtp = () => {
 
       // API call to verify OTP
       const response = await axios.post(
-        "http://localhost:3000/api/user/verify-otp",
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/verify-otp`,
         {
           phoneNumber,
           otp,
@@ -92,7 +92,7 @@ const LoginWithOtp = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/request-otp",
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/request-otp`,
         {
           phoneNumber,
         }

@@ -99,7 +99,9 @@ export default function QuizScreen() {
 
   useEffect(() => {
     async function handleGetAllQuizs() {
-      const response = await fetch(`http://localhost:3000/api/quiz/getQuizzes`);
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/quiz/getQuizzes`
+      );
       const resData = await response.json();
 
       setQuizs(resData.data);
