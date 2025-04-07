@@ -1,11 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import QuizScreen from "./components/quiz/QuizScreen";
-import AddQuizs from "./components/quiz/AddQuizs";
-import EditQuiz from "./components/quiz/EditQuiz";
-import LoginWithOtp from "./screens/LoginWithOtp";
+
+
+
 import Save4LaterQuizs from "./screens/Save4LaterQuizs";
 import { checkAuthLoader } from "../middleware/getToken";
 import RootLayout from "./Layout/RootLayout";
+import { lazy } from "react";
+
+const QuizScreen = lazy(() => import("./components/quiz/QuizScreen"));
+const AddQuizs = lazy(() => import("./components/quiz/AddQuizs"));
+const EditQuiz = lazy(() => import("./components/quiz/EditQuiz"));
+const LoginWithOtp  = lazy(()=> import("./screens/LoginWithOtp"))
+
+
+
+
 
 function App() {
   const router = createBrowserRouter([
